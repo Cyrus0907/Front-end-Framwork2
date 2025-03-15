@@ -1,103 +1,57 @@
-import { Link } from "react-router-dom";
-import IProduct from "../../interfaces/product";
-import { useEffect, useState } from "react";
-import axios, { AxiosError } from "axios";
-import { toast } from "react-hot-toast";
-
-
-
-// function component
+import {Table } from "antd";
 function ProductList() {
-  const [products, setProducts] = useState<IProduct[]>([]);
-  useEffect(() => {
-    const getAll = async () => {
+  // JSX
 
-      try {
-        const { data } = await axios.get(` http://localhost:3000/products`)
-        if (data) {
-          setProducts(data);
-        }
-      } catch (error) {
-        toast.error((error as AxiosError).message);
-      }
+  const dataSource = [
+    {
+      id: 1,
+      name: "Nike Air Force 1",
+      price: 2500000,
+      thumbnail: "https://example.com/nike-af1.jpg",
+      description: "Giày thể thao Nike Air Force 1 cổ điển."
+    },
+    {
+      id: 2,
+      name: "Adidas Ultraboost",
+      price: 3200000,
+      thumbnail: "https://example.com/adidas-ultraboost.jpg",
+      description: "Giày chạy bộ Adidas Ultraboost thoải mái."
+    },
+    
+  ];
+  
+  const columns = [
+    {
+      title: 'Id',
+      dataIndex: 'id',
+      key: 'id', 
+    },
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
+      title: 'Price',
+      dataIndex: 'price',
+      key: 'price',
+    },
+    {
+      title: 'Thumbnail',
+      dataIndex: 'thumbnail',
+      key: 'thumbnail',
+    },
+    {
+      title: 'Description',
+      dataIndex: 'description',
+      key: 'description',
     }
-    getAll();
-
-  }, [])
-
-  const handleDelete = async (id: string) => {
-    if (window.confirm('ban chac chan muon xoa k')) {
-      if (id) {
-        try {
-          await axios.delete(`http://localhost:3000/products/${id}`)
-          toast.success('xoa thanh cong');
-          setProducts((prev: IProduct[]) => {
-            return prev.filter((item: IProduct) => {
-              return item.id != id;
-            })
-          })
-        } catch (error) {
-          toast.error((error as AxiosError).message)
-        }
-      }
-    }
-  }
-  return( <div>
-    <h1>Danh sách sản phẩm</h1>
-    <table className="table" border = {1}
-    >
-
-      <thead >
-        <tr >
-          <th scope="col" >STT</th>
-          <th scope="col">Tên</th>
-          <th scope="col">Giá</th>
-          <th scope="col">Ảnh</th>
-          <th scope="col">Mô tả</th>
-          <th scope="col">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        {products?.map((item: IProduct, index: number) => {
-          return (
-            <tr key={item.id}>
-              <th scope="row">{index + 1}</th>
-              <td>{item.name}</td>
-              <td>{item.price}</td>
-              <td><img src={item.thumbnail} height={"70px"} alt={item.thumbnail}/></td>
-              <td>{item.description}</td>
-
-              <td>
-                <button className="btn btn-danger" onClick={() => { handleDelete(item.id) }} style={{
-                    backgroundColor: '#dc3545',
-                    color: '#fff',
-                    border: 'none'
-                    
-                    
-                  }}>XOÁ</button>
-                <Link to={`edit/${item.id}`}>
-                    <button className="btn btn-primary" 
-                    style={{
-                      backgroundColor: '#007bff',
-                      color: '#fff',
-                      border: "none"
-                      }}>
-                      Sửa
-                      
-                    </button>                
-                </Link>
-              </td>
-            </tr>
-          )
-        })}
-
-
-      </tbody>
-    </table>
-
-
-  </div>
-  )
+  ];
+  
+  <Table dataSource={dataSource} columns={columns} />;
+  return <div>
+    
+  </div>;
 }
 
 export default ProductList;
