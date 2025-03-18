@@ -1,0 +1,16 @@
+{
+  "products": [
+    { "id": 1, "name": "AIR FORCE 1", "price": 3800000, "image": "/images/b11.jpg" },
+    { "id": 2, "name": "AIR FORCE 1", "price": 3800000, "image": "/images/z6416023057675_3c39dec7fe22bc27345f1c52e4f26bcc.jpg" },
+    { "id": 3, "name": "AIR FORCE 1", "price": 3800000, "image": "z6416023057676_49f11420580c4bb42ef6970e4723477c.jpg" },
+    { "id": 4, "name": "AIR FORCE 1", "price": 16800000, "image": "z6416023057790_dee57c8e8a52e2d93916616426f8b487.jpg" },
+    { "id": 5, "name": "AIR FORCE 1", "price": 2500000, "image": "z6416023114793_fd91e396a844ebeabcae2a81d2f8f2ff.jpg" },
+    { "id": 6, "name": "Judgment Shirt", "price": 3800000, "image": "z6416023114834_557ea40722c15d12b264baa2d0e40893.jpg" },
+    { "id": 7, "name": "Doberman Shirt", "price": 480000, "image": "z6416023114879_b172f3f5f5c4a70b6d9c20b42afba71c.jpg" },
+    { "id": 8, "name": "GANGSTA SHIRT", "price": 2800000, "image": "z6416023114924_3b9e4bc33d8a7ebf9f3994e634e9db31.jpg" },
+    { "id": 9, "name": "NIKE PEGASUS TRAIL", "price": 3600000, "image": "z6416023170319_b2a0dfdb3625a73eb7223e94bcc32772.jpg" },
+    { "id": 10, "name": "NIKE QUEST 5", "price": 2500000, "image": "z6416023170353_c3f05ccbce8c0ca353e313e0e08f70d8.jpg" },
+    { "id": 11, "name": "ADIDAS GRADAS", "price": 3600000, "image": "z6416023170384_8c1bfe525b4d0785ed24f730c7afff67.jpg" },
+    { "id": 12, "name": "PUMA SLIPSTREAM", "price": 2800000, "image": "z6416023170386_226d141fce45f0ce2c0da2a3517dbcd1.jpg" }
+  ]
+}
